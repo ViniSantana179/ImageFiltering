@@ -68,7 +68,7 @@ def apply_rotation(image: Image.Image) -> Image.Image:
     (h, w) = image_cv.shape[:2]
     center = (w // 2, h // 2)
 
-    M = cv2.getRotationMatrix2D(center, 90, 1.0)  
+    M = cv2.getRotationMatrix2D(center,45, 1.0)  
     rotated_image = cv2.warpAffine(image_cv, M, (w, h))  
     
     rotated_image_pil = Image.fromarray(cv2.cvtColor(rotated_image, cv2.COLOR_BGR2RGB))
